@@ -1,0 +1,752 @@
+{
+  "baseline": {
+    "candidate_id": 0,
+    "distance_from_default": 0.0,
+    "metrics": {
+      "pairwise_accuracy": 0.760703,
+      "pairwise_correct": 2079,
+      "pairwise_total": 2733,
+      "scenarios": 200,
+      "top1_accuracy": 0.49,
+      "top1_correct": 98,
+      "top3_hits": 413,
+      "top3_recall": 0.688333
+    },
+    "source": "supplied_default",
+    "weights": {
+      "w_cov": 0.39999999999999997,
+      "w_ded": 0.29999999999999993,
+      "w_ins": 0.3,
+      "w_price": 1.0,
+      "w_score": 0.0,
+      "w_static": 0.7
+    }
+  },
+  "best_weights": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/reward_calibration/best_weights.json",
+    "sha256": "735f900d8bb043cc694c8f57a73ed01723389225611ba7a50d1e3db7ee6ac318"
+  },
+  "candidate_results": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/reward_calibration/candidate_results.jsonl",
+    "sha256": "4d5743792c42bcd318b98b44084d195b559551a2c62a823cf8471fc3077ef198"
+  },
+  "checks": {
+    "fast_scorer_matches_tools_reward_default_on_all_scenarios": true,
+    "golden_data_used": false,
+    "grpo_validation_used": false,
+    "llm_calls": 0
+  },
+  "cross_validation": {
+    "folds": [
+      {
+        "fold": 0,
+        "held_out_metrics": {
+          "pairwise_accuracy": 0.920213,
+          "pairwise_correct": 519,
+          "pairwise_total": 564,
+          "scenarios": 40,
+          "top1_accuracy": 0.925,
+          "top1_correct": 37,
+          "top3_hits": 101,
+          "top3_recall": 0.841667
+        },
+        "held_out_scenarios": 40,
+        "selected_candidate_id": 15957,
+        "train_scenarios": 160,
+        "training_metrics": {
+          "pairwise_accuracy": 0.923006,
+          "pairwise_correct": 2002,
+          "pairwise_total": 2169,
+          "scenarios": 160,
+          "top1_accuracy": 0.94375,
+          "top1_correct": 151,
+          "top3_hits": 404,
+          "top3_recall": 0.841667
+        },
+        "weights": {
+          "w_cov": 0.0928034111891159,
+          "w_ded": 0.06960255839183692,
+          "w_ins": 0.4102710203778362,
+          "w_price": 1.793611631132337,
+          "w_score": 0.42732301004121104,
+          "w_static": 0.16240596958095282
+        }
+      },
+      {
+        "fold": 1,
+        "held_out_metrics": {
+          "pairwise_accuracy": 0.912568,
+          "pairwise_correct": 501,
+          "pairwise_total": 549,
+          "scenarios": 40,
+          "top1_accuracy": 0.95,
+          "top1_correct": 38,
+          "top3_hits": 99,
+          "top3_recall": 0.825
+        },
+        "held_out_scenarios": 40,
+        "selected_candidate_id": 15957,
+        "train_scenarios": 160,
+        "training_metrics": {
+          "pairwise_accuracy": 0.924908,
+          "pairwise_correct": 2020,
+          "pairwise_total": 2184,
+          "scenarios": 160,
+          "top1_accuracy": 0.9375,
+          "top1_correct": 150,
+          "top3_hits": 406,
+          "top3_recall": 0.845833
+        },
+        "weights": {
+          "w_cov": 0.0928034111891159,
+          "w_ded": 0.06960255839183692,
+          "w_ins": 0.4102710203778362,
+          "w_price": 1.793611631132337,
+          "w_score": 0.42732301004121104,
+          "w_static": 0.16240596958095282
+        }
+      },
+      {
+        "fold": 2,
+        "held_out_metrics": {
+          "pairwise_accuracy": 0.926871,
+          "pairwise_correct": 545,
+          "pairwise_total": 588,
+          "scenarios": 40,
+          "top1_accuracy": 0.975,
+          "top1_correct": 39,
+          "top3_hits": 100,
+          "top3_recall": 0.833333
+        },
+        "held_out_scenarios": 40,
+        "selected_candidate_id": 15957,
+        "train_scenarios": 160,
+        "training_metrics": {
+          "pairwise_accuracy": 0.921212,
+          "pairwise_correct": 1976,
+          "pairwise_total": 2145,
+          "scenarios": 160,
+          "top1_accuracy": 0.93125,
+          "top1_correct": 149,
+          "top3_hits": 405,
+          "top3_recall": 0.84375
+        },
+        "weights": {
+          "w_cov": 0.0928034111891159,
+          "w_ded": 0.06960255839183692,
+          "w_ins": 0.4102710203778362,
+          "w_price": 1.793611631132337,
+          "w_score": 0.42732301004121104,
+          "w_static": 0.16240596958095282
+        }
+      },
+      {
+        "fold": 3,
+        "held_out_metrics": {
+          "pairwise_accuracy": 0.914286,
+          "pairwise_correct": 480,
+          "pairwise_total": 525,
+          "scenarios": 40,
+          "top1_accuracy": 0.925,
+          "top1_correct": 37,
+          "top3_hits": 99,
+          "top3_recall": 0.825
+        },
+        "held_out_scenarios": 40,
+        "selected_candidate_id": 15957,
+        "train_scenarios": 160,
+        "training_metrics": {
+          "pairwise_accuracy": 0.924366,
+          "pairwise_correct": 2041,
+          "pairwise_total": 2208,
+          "scenarios": 160,
+          "top1_accuracy": 0.94375,
+          "top1_correct": 151,
+          "top3_hits": 406,
+          "top3_recall": 0.845833
+        },
+        "weights": {
+          "w_cov": 0.0928034111891159,
+          "w_ded": 0.06960255839183692,
+          "w_ins": 0.4102710203778362,
+          "w_price": 1.793611631132337,
+          "w_score": 0.42732301004121104,
+          "w_static": 0.16240596958095282
+        }
+      },
+      {
+        "fold": 4,
+        "held_out_metrics": {
+          "pairwise_accuracy": 0.938856,
+          "pairwise_correct": 476,
+          "pairwise_total": 507,
+          "scenarios": 40,
+          "top1_accuracy": 0.925,
+          "top1_correct": 37,
+          "top3_hits": 106,
+          "top3_recall": 0.883333
+        },
+        "held_out_scenarios": 40,
+        "selected_candidate_id": 15957,
+        "train_scenarios": 160,
+        "training_metrics": {
+          "pairwise_accuracy": 0.918688,
+          "pairwise_correct": 2045,
+          "pairwise_total": 2226,
+          "scenarios": 160,
+          "top1_accuracy": 0.94375,
+          "top1_correct": 151,
+          "top3_hits": 399,
+          "top3_recall": 0.83125
+        },
+        "weights": {
+          "w_cov": 0.0928034111891159,
+          "w_ded": 0.06960255839183692,
+          "w_ins": 0.4102710203778362,
+          "w_price": 1.793611631132337,
+          "w_score": 0.42732301004121104,
+          "w_static": 0.16240596958095282
+        }
+      }
+    ],
+    "held_out_aggregate": {
+      "pairwise_accuracy": 0.92243,
+      "pairwise_correct": 2521,
+      "pairwise_total": 2733,
+      "scenarios": 200,
+      "top1_accuracy": 0.94,
+      "top1_correct": 188,
+      "top3_hits": 505,
+      "top3_recall": 0.841667
+    },
+    "method": "nested held-out estimate: select on four folds, evaluate on the fifth",
+    "top1_wilson_95": [
+      0.898067,
+      0.965348
+    ]
+  },
+  "dataset": {
+    "max_quotes_per_scenario": 9,
+    "mean_quotes_per_scenario": 6.555,
+    "min_quotes_per_scenario": 4,
+    "quotes": 1311,
+    "scenarios": 200,
+    "within_scenario_varying": {
+      "coverage_score": 200,
+      "deductible": 0,
+      "insured_amount": 168,
+      "num_coverages": 0,
+      "price_annual": 200
+    }
+  },
+  "experiment": "offline_reward_calibration",
+  "fold_distributions": {
+    "0": {
+      "age_stratum": {
+        "middle": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "modern": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "old": {
+          "count": 14,
+          "pct": 35.0
+        }
+      },
+      "building_type": {
+        "multi-family": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "semi-detached": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "single-family": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "terraced": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "two-family": {
+          "count": 7,
+          "pct": 17.5
+        }
+      },
+      "construction_class": {
+        "bak1": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "bak2": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "fhg1": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "fhg2": {
+          "count": 9,
+          "pct": 22.5
+        }
+      },
+      "hazard_tier": {
+        "elevated": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "high": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "moderate": {
+          "count": 16,
+          "pct": 40.0
+        }
+      },
+      "natural_hazard_requested": {
+        "false": {
+          "count": 16,
+          "pct": 40.0
+        },
+        "true": {
+          "count": 24,
+          "pct": 60.0
+        }
+      },
+      "owner_occupied": {
+        "false": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "true": {
+          "count": 28,
+          "pct": 70.0
+        }
+      }
+    },
+    "1": {
+      "age_stratum": {
+        "middle": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "modern": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "old": {
+          "count": 13,
+          "pct": 32.5
+        }
+      },
+      "building_type": {
+        "multi-family": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "semi-detached": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "single-family": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "terraced": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "two-family": {
+          "count": 9,
+          "pct": 22.5
+        }
+      },
+      "construction_class": {
+        "bak1": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "bak2": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "fhg1": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "fhg2": {
+          "count": 10,
+          "pct": 25.0
+        }
+      },
+      "hazard_tier": {
+        "elevated": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "high": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "moderate": {
+          "count": 15,
+          "pct": 37.5
+        }
+      },
+      "natural_hazard_requested": {
+        "false": {
+          "count": 15,
+          "pct": 37.5
+        },
+        "true": {
+          "count": 25,
+          "pct": 62.5
+        }
+      },
+      "owner_occupied": {
+        "false": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "true": {
+          "count": 28,
+          "pct": 70.0
+        }
+      }
+    },
+    "2": {
+      "age_stratum": {
+        "middle": {
+          "count": 15,
+          "pct": 37.5
+        },
+        "modern": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "old": {
+          "count": 13,
+          "pct": 32.5
+        }
+      },
+      "building_type": {
+        "multi-family": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "semi-detached": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "single-family": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "terraced": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "two-family": {
+          "count": 8,
+          "pct": 20.0
+        }
+      },
+      "construction_class": {
+        "bak1": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "bak2": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "fhg1": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "fhg2": {
+          "count": 10,
+          "pct": 25.0
+        }
+      },
+      "hazard_tier": {
+        "elevated": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "high": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "moderate": {
+          "count": 15,
+          "pct": 37.5
+        }
+      },
+      "natural_hazard_requested": {
+        "false": {
+          "count": 15,
+          "pct": 37.5
+        },
+        "true": {
+          "count": 25,
+          "pct": 62.5
+        }
+      },
+      "owner_occupied": {
+        "false": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "true": {
+          "count": 29,
+          "pct": 72.5
+        }
+      }
+    },
+    "3": {
+      "age_stratum": {
+        "middle": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "modern": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "old": {
+          "count": 13,
+          "pct": 32.5
+        }
+      },
+      "building_type": {
+        "multi-family": {
+          "count": 6,
+          "pct": 15.0
+        },
+        "semi-detached": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "single-family": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "terraced": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "two-family": {
+          "count": 8,
+          "pct": 20.0
+        }
+      },
+      "construction_class": {
+        "bak1": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "bak2": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "fhg1": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "fhg2": {
+          "count": 10,
+          "pct": 25.0
+        }
+      },
+      "hazard_tier": {
+        "elevated": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "high": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "moderate": {
+          "count": 15,
+          "pct": 37.5
+        }
+      },
+      "natural_hazard_requested": {
+        "false": {
+          "count": 15,
+          "pct": 37.5
+        },
+        "true": {
+          "count": 25,
+          "pct": 62.5
+        }
+      },
+      "owner_occupied": {
+        "false": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "true": {
+          "count": 28,
+          "pct": 70.0
+        }
+      }
+    },
+    "4": {
+      "age_stratum": {
+        "middle": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "modern": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "old": {
+          "count": 13,
+          "pct": 32.5
+        }
+      },
+      "building_type": {
+        "multi-family": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "semi-detached": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "single-family": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "terraced": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "two-family": {
+          "count": 8,
+          "pct": 20.0
+        }
+      },
+      "construction_class": {
+        "bak1": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "bak2": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "fhg1": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "fhg2": {
+          "count": 8,
+          "pct": 20.0
+        }
+      },
+      "hazard_tier": {
+        "elevated": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "high": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "moderate": {
+          "count": 16,
+          "pct": 40.0
+        }
+      },
+      "natural_hazard_requested": {
+        "false": {
+          "count": 16,
+          "pct": 40.0
+        },
+        "true": {
+          "count": 24,
+          "pct": 60.0
+        }
+      },
+      "owner_occupied": {
+        "false": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "true": {
+          "count": 29,
+          "pct": 72.5
+        }
+      }
+    }
+  },
+  "input": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/reward_calibration.jsonl",
+    "sha256": "6ead12659ceb5b780993988cc64cdb6e66f535a55cef1cad1cdbc73d303dcfd6"
+  },
+  "report": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/reward_calibration/calibration_report.md",
+    "sha256": "4c47eebc5bcb640e9bdfd681f83df03aa770b3893516d084caf3be36a88d4eef"
+  },
+  "search": {
+    "candidates": 20000,
+    "folds": 5,
+    "objective": [
+      "top1_accuracy",
+      "top3_recall",
+      "pairwise_accuracy",
+      "proximity_to_default"
+    ],
+    "price_range": [
+      0.0,
+      5.0
+    ],
+    "protection_parameterization": "simplex(static=w_cov+w_ded, insured, score)",
+    "static_mapping": "w_cov:w_ded = 4:3"
+  },
+  "seed": 20260926,
+  "selected": {
+    "candidate_id": 15957,
+    "distance_from_default": 1.21592214,
+    "metrics": {
+      "pairwise_accuracy": 0.92243,
+      "pairwise_correct": 2521,
+      "pairwise_total": 2733,
+      "scenarios": 200,
+      "top1_accuracy": 0.94,
+      "top1_correct": 188,
+      "top3_hits": 505,
+      "top3_recall": 0.841667
+    },
+    "rank": 1,
+    "source": "random_simplex",
+    "weights": {
+      "w_cov": 0.0928034111891159,
+      "w_ded": 0.06960255839183692,
+      "w_ins": 0.4102710203778362,
+      "w_price": 1.793611631132337,
+      "w_score": 0.42732301004121104,
+      "w_static": 0.16240596958095282
+    }
+  },
+  "stratification_fields": [
+    "hazard_tier",
+    "age_stratum",
+    "building_type",
+    "construction_class",
+    "natural_hazard_requested",
+    "owner_occupied"
+  ]
+}

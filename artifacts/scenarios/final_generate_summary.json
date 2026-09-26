@@ -1,0 +1,37 @@
+{
+  "age_stratum_counts": {
+    "middle": 785,
+    "modern": 800,
+    "old": 815
+  },
+  "building_type_counts": {
+    "multi-family": 475,
+    "semi-detached": 487,
+    "single-family": 498,
+    "terraced": 484,
+    "two-family": 456
+  },
+  "construction_class_counts": {
+    "BAK1": 484,
+    "BAK2": 487,
+    "FHG1": 477,
+    "FHG2": 476,
+    "FHG3": 476
+  },
+  "deductible_counts": {
+    "False": 1175,
+    "True": 1225
+  },
+  "hazard_stratum_counts": {
+    "elevated": 741,
+    "high": 722,
+    "moderate": 937
+  },
+  "output_path": "artifacts/scenarios/final_candidates.jsonl",
+  "owner_occupied_counts": {
+    "False": 714,
+    "True": 1686
+  },
+  "total_scenarios": 2400,
+  "unique_scenario_ids": 2400
+}

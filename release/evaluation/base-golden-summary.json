@@ -1,0 +1,50 @@
+{
+  "adapter": null,
+  "adapter_sha256": null,
+  "base_model": "Qwen/Qwen3.5-2B",
+  "completed_at": "2026-09-26T12:32:04.703192+00:00",
+  "dataset": "/root/wg-recommendation/data/golden_wg_recommendations.jsonl",
+  "dataset_sha256": "864123d2f1c2741f94cfef94ebdd09ecc6eb6d1b3fe898212441ad99b54eaa33",
+  "environment": {
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX A6000",
+    "packages": {
+      "peft": "0.21.0",
+      "torch": "2.8.0+cu128",
+      "transformers": "5.5.0",
+      "unsloth": "2026.9.11",
+      "unsloth_zoo": "2026.9.7"
+    },
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "precision": "bf16",
+    "python": "3.12.3"
+  },
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 700,
+    "max_seq_length": 2048,
+    "thinking": false
+  },
+  "generation_seconds": 979.76,
+  "golden": true,
+  "metrics": {
+    "mean_completion_tokens": 493.82,
+    "mean_prompt_tokens": 995.0,
+    "recommendations_per_second": 0.051033,
+    "reward_ratio": 0.844364,
+    "reward_ratio_valid_picks_only": 0.844364,
+    "strict_json_rate": 0.02,
+    "top1_accuracy": 0.22,
+    "top1_correct": 11,
+    "top3_recall": 0.666667,
+    "valid_three_unique_tariffs_rate": 1.0,
+    "valid_top1_tariff_rate": 1.0
+  },
+  "model_load_seconds": 194.146,
+  "model_revision": "main",
+  "model_revision_resolved": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "reward_definition": "supplied per-quote reward already stored in the evaluation dataset; no calibrated weights applied",
+  "run_name": "golden-base-qwen35-2b-700tok",
+  "scenarios": 50,
+  "stage": "base"
+}

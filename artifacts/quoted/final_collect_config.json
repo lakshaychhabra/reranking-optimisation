@@ -1,0 +1,11 @@
+{
+  "cache_dir": "artifacts/cache/final_quotes",
+  "delay": 3.0,
+  "input": "artifacts/scenarios/final_candidates.jsonl",
+  "max_live_calls": 2000,
+  "mode": "execute-live",
+  "output": "artifacts/quoted/final_quoted_scenarios.jsonl",
+  "retry_transient_errors": false,
+  "seed": 20260925,
+  "target": 1600
+}

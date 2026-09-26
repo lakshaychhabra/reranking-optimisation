@@ -1,0 +1,124 @@
+{
+  "data": {
+    "disjoint": true,
+    "manifest": "/root/wg-recommendation/artifacts/training/grpo_data/manifest.json",
+    "manifest_sha256": "e5281b29713398c9763091039302e317a9968b4deb5e09482c371deedebd6801",
+    "teacher_labels_in_train": false,
+    "train": "/root/wg-recommendation/artifacts/training/grpo_data/train.jsonl",
+    "train_records": 810,
+    "train_sha256": "f93a7a9291aa3acf938e75bced912ee0d393853322ba7fb3fbbe707776e3d81e",
+    "validation": "/root/wg-recommendation/artifacts/training/grpo_data/validation.jsonl",
+    "validation_records": 90,
+    "validation_sha256": "fb78e73af23420338b504741a9115be4abdb035f9cdf905ebafd8362d56f7d89"
+  },
+  "environment": {
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 1,
+    "packages": {
+      "accelerate": "1.15.0",
+      "bitsandbytes": "0.50.2",
+      "datasets": "4.3.0",
+      "peft": "0.21.0",
+      "torch": "2.8.0+cu128",
+      "transformers": "5.5.0",
+      "trl": "0.24.0",
+      "unsloth": "2026.9.11",
+      "unsloth_zoo": "2026.9.7"
+    },
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "precision": "bf16",
+    "python": "3.12.3"
+  },
+  "hyperparameters": {
+    "allow_long_run": false,
+    "beta": 0.001,
+    "effective_batch_size": 4,
+    "eval_batch_size": 4,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 5e-06,
+    "log_completions": false,
+    "loss_type": "dr_grpo",
+    "lr_scheduler_type": "cosine",
+    "max_completion_length": 128,
+    "max_sequence_length": 2048,
+    "max_steps": 10,
+    "num_generations": 4,
+    "prompt_format": "rendered chat template with thinking disabled",
+    "scale_rewards": false,
+    "seed": 3407,
+    "smoke_test": false,
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "train_batch_size": 4,
+    "use_vllm": false,
+    "warmup_ratio": 0.1
+  },
+  "model": {
+    "resolved_base_model": "Qwen/Qwen3.5-2B",
+    "resolved_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+    "total_parameters": 2224153408,
+    "trainable_parameters": 10911744,
+    "trainable_percentage": 0.490602
+  },
+  "records_used": {
+    "train": 810,
+    "validation": 90
+  },
+  "reward": {
+    "component_names": [
+      "strict_json_reward",
+      "valid_tariffs_reward",
+      "calibrated_top1_reward",
+      "calibrated_ranking_reward"
+    ],
+    "component_weight_policy": "fixed before GRPO; do not tune on GRPO validation or golden data",
+    "component_weights": [
+      0.1,
+      0.1,
+      0.4,
+      0.4
+    ],
+    "frozen_business_reward": {
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/reward_calibration/best_weights.json",
+      "sha256": "735f900d8bb043cc694c8f57a73ed01723389225611ba7a50d1e3db7ee6ac318",
+      "weights": {
+        "w_cov": 0.0928034111891159,
+        "w_ded": 0.06960255839183692,
+        "w_ins": 0.4102710203778362,
+        "w_price": 1.793611631132337,
+        "w_score": 0.42732301004121104
+      }
+    }
+  },
+  "run_name": "grpo-qwen35-2b-10step",
+  "sft_adapter": "/root/wg-recommendation/artifacts/training/runs/sft-qwen35-2b-seed3407/final_adapter",
+  "stage": "grpo",
+  "started_at": "2026-09-26T13:10:01.807911+00:00",
+  "token_audit": {
+    "train": {
+      "max_completion_length": 128,
+      "max_sequence_length": 2048,
+      "prompt_tokens": {
+        "max": 1280,
+        "min": 691,
+        "p50": 980,
+        "p95": 1261
+      },
+      "prompts_without_completion_margin": 0,
+      "records": 810
+    },
+    "validation": {
+      "max_completion_length": 128,
+      "max_sequence_length": 2048,
+      "prompt_tokens": {
+        "max": 1289,
+        "min": 765,
+        "p50": 978,
+        "p95": 1259
+      },
+      "prompts_without_completion_margin": 0,
+      "records": 90
+    }
+  }
+}

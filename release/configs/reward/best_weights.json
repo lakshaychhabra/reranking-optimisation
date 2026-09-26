@@ -1,0 +1,37 @@
+{
+  "candidate_id": 15957,
+  "do_not_tune_on": [
+    "artifacts/splits/grpo_validation.jsonl",
+    "data/golden_wg_recommendations.jsonl"
+  ],
+  "nested_cross_validation_metrics": {
+    "pairwise_accuracy": 0.92243,
+    "pairwise_correct": 2521,
+    "pairwise_total": 2733,
+    "scenarios": 200,
+    "top1_accuracy": 0.94,
+    "top1_correct": 188,
+    "top3_hits": 505,
+    "top3_recall": 0.841667
+  },
+  "seed": 20260926,
+  "selection_metrics": {
+    "pairwise_accuracy": 0.92243,
+    "pairwise_correct": 2521,
+    "pairwise_total": 2733,
+    "scenarios": 200,
+    "top1_accuracy": 0.94,
+    "top1_correct": 188,
+    "top3_hits": 505,
+    "top3_recall": 0.841667
+  },
+  "source_calibration_sha256": "6ead12659ceb5b780993988cc64cdb6e66f535a55cef1cad1cdbc73d303dcfd6",
+  "status": "frozen",
+  "weights": {
+    "w_cov": 0.0928034111891159,
+    "w_ded": 0.06960255839183692,
+    "w_ins": 0.4102710203778362,
+    "w_price": 1.793611631132337,
+    "w_score": 0.42732301004121104
+  }
+}

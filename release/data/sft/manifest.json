@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "all_targets_have_three_unique_ids": true,
+    "all_teacher_ids_exist_in_quote_sets": true,
+    "golden_records_used": 0,
+    "train_validation_disjoint": true
+  },
+  "format": "TRL conversational prompt-completion",
+  "prompt_source": "src/prompts.py: BROKER_SYSTEM + build_broker_prompt(include_rationales=False)",
+  "splits": {
+    "train": {
+      "completion_characters": {
+        "max": 98,
+        "min": 95,
+        "p50": 96,
+        "p95": 98
+      },
+      "output": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/training/sft_data/train.jsonl",
+        "sha256": "95bf70fb0165b03f87694386947249b428471d81b9d7ba5d1f534300fd14f7c1"
+      },
+      "prompt_characters": {
+        "max": 3561,
+        "min": 2089,
+        "p50": 2790,
+        "p95": 3489
+      },
+      "records": 300,
+      "source": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/sft_train.jsonl",
+        "sha256": "81d6e1409e09c2e32d204b7a8e5869e6639a7f7dfa1f5da9214450a808542203"
+      },
+      "unique_scenario_ids": 300
+    },
+    "validation": {
+      "completion_characters": {
+        "max": 98,
+        "min": 95,
+        "p50": 96,
+        "p95": 98
+      },
+      "output": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/training/sft_data/validation.jsonl",
+        "sha256": "33056689ca414c64f337bac767b43c84cf21a8883ea1a72390bc29b18b044c55"
+      },
+      "prompt_characters": {
+        "max": 3540,
+        "min": 2346,
+        "p50": 2796,
+        "p95": 3484
+      },
+      "records": 90,
+      "source": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/sft_validation.jsonl",
+        "sha256": "be7b7c2c847da21e6fbf05145b39f16d1a18a2baa0761e427ccc88e49dfdb76b"
+      },
+      "unique_scenario_ids": 90
+    }
+  },
+  "target_schema": {
+    "top_3": [
+      {
+        "rank": "1..3",
+        "tariff_id": "string"
+      }
+    ]
+  },
+  "teacher_rationales_in_target": false
+}

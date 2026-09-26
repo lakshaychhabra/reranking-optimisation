@@ -1,0 +1,53 @@
+{
+  "adapter": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/release/model/sft-final",
+  "adapter_sha256": "f3bbd9330f353c038ce3d9e2338c76b6f5cd4b036ee81cd23bc7ed510c66bf48",
+  "backend": "transformers",
+  "backend_requested": "transformers",
+  "base_model": "tmp/imported-runpod/artifacts/models/Qwen3.5-2B",
+  "completed_at": "2026-09-26T17:59:05.953824+00:00",
+  "dataset": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/data/golden_wg_recommendations.jsonl",
+  "dataset_sha256": "864123d2f1c2741f94cfef94ebdd09ecc6eb6d1b3fe898212441ad99b54eaa33",
+  "environment": {
+    "accelerator": "mps",
+    "cuda": null,
+    "device": "mps",
+    "packages": {
+      "peft": "0.21.0",
+      "torch": "2.8.0",
+      "transformers": "5.5.0",
+      "unsloth": null,
+      "unsloth_zoo": null
+    },
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "precision": "bf16",
+    "python": "3.11.14"
+  },
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 700,
+    "max_seq_length": 2048,
+    "thinking": false
+  },
+  "generation_seconds": 323.184,
+  "golden": true,
+  "metrics": {
+    "mean_completion_tokens": 43.3,
+    "mean_prompt_tokens": 995.0,
+    "recommendations_per_second": 0.154711,
+    "reward_ratio": 0.811724,
+    "reward_ratio_valid_picks_only": 0.811724,
+    "strict_json_rate": 1.0,
+    "top1_accuracy": 0.84,
+    "top1_correct": 42,
+    "top3_recall": 0.866667,
+    "valid_three_unique_tariffs_rate": 1.0,
+    "valid_top1_tariff_rate": 1.0
+  },
+  "model_load_seconds": 7.009,
+  "model_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "model_revision_resolved": null,
+  "reward_definition": "supplied per-quote reward already stored in the evaluation dataset; no calibrated weights applied",
+  "run_name": "golden-sft-mps-reproduction",
+  "scenarios": 50,
+  "stage": "sft"
+}

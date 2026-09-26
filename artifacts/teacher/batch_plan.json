@@ -1,0 +1,73 @@
+{
+  "batch_prices_usd_per_mtok": {
+    "input": 1.0,
+    "output": 5.0
+  },
+  "created_at": "2026-09-25T20:18:18.539659+00:00",
+  "endpoint": "/v1/responses",
+  "estimated_batch_cost_usd": 5.1306,
+  "estimated_input_tokens": 1778126,
+  "estimated_output_tokens": 670500,
+  "estimated_output_tokens_per_scenario": 450,
+  "model": "gpt-6-sol",
+  "reasoning_effort": "low",
+  "scenario_count": 1490,
+  "shard_size": 745,
+  "shards": [
+    {
+      "actual_cost_usd": 1.822213,
+      "annotation_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/annotations/batch_000.jsonl",
+      "batch_id": "batch_6ab6d816ceb88190bcbfc9d4ed9f3a8e",
+      "downloaded_at": "2026-09-25T20:26:20.360068+00:00",
+      "error_file_id": null,
+      "index": 0,
+      "input_file_id": "file-GHaJGeeQvgmFrJVoMcayGb",
+      "input_tokens": 774013,
+      "last_checked_at": "2026-09-25T20:26:18.790817+00:00",
+      "output_file_id": "file-Qtn82Kh9tCRgXJuQTB5JEj",
+      "output_tokens": 209640,
+      "raw_output_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/raw/batch_000_output.jsonl",
+      "request_count": 745,
+      "request_counts": {
+        "completed": 745,
+        "failed": 0,
+        "total": 745
+      },
+      "request_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/requests/batch_000.jsonl",
+      "request_sha256": "116c82fce6c21543daa3f1711c1d4502e169449bc8c760dbe6b72344e878674f",
+      "status": "downloaded",
+      "submitted_at": "2026-09-25T20:22:47.536366+00:00",
+      "valid_annotations": 745,
+      "validation_errors": 0
+    },
+    {
+      "actual_cost_usd": 1.813698,
+      "annotation_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/annotations/batch_001.jsonl",
+      "batch_id": "batch_6ab6d8fdd49c8190b0dd5d168b66828c",
+      "downloaded_at": "2026-09-25T20:33:39.863412+00:00",
+      "error_file_id": null,
+      "index": 1,
+      "input_file_id": "file-UABNmGcFUmFHZGFde4559v",
+      "input_tokens": 772913,
+      "last_checked_at": "2026-09-25T20:33:37.722848+00:00",
+      "output_file_id": "file-VbPmiSwc4UV71QTrZDvzG8",
+      "output_tokens": 208157,
+      "raw_output_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/raw/batch_001_output.jsonl",
+      "request_count": 745,
+      "request_counts": {
+        "completed": 745,
+        "failed": 0,
+        "total": 745
+      },
+      "request_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/requests/batch_001.jsonl",
+      "request_sha256": "4f78ae66b1526cfcecb71919b5a13344311b05c5d9179857725e3c127f3e458a",
+      "status": "downloaded",
+      "submitted_at": "2026-09-25T20:26:37.969108+00:00",
+      "valid_annotations": 745,
+      "validation_errors": 0
+    }
+  ],
+  "source_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/quoted/final_quoted_scenarios.jsonl",
+  "source_sha256": "710537bcfab97b74625f27a62ac0ac455a84c118d53180be5be3349fdac37885",
+  "updated_at": "2026-09-25T20:33:39.863432+00:00"
+}

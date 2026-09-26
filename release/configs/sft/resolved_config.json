@@ -1,0 +1,91 @@
+{
+  "dataset": {
+    "disjoint": true,
+    "train_records": 300,
+    "train_sha256": "95bf70fb0165b03f87694386947249b428471d81b9d7ba5d1f534300fd14f7c1",
+    "validation_records": 90,
+    "validation_sha256": "33056689ca414c64f337bac767b43c84cf21a8883ea1a72390bc29b18b044c55"
+  },
+  "environment": {
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 1,
+    "packages": {
+      "accelerate": "1.15.0",
+      "datasets": "4.3.0",
+      "peft": "0.21.0",
+      "torch": "2.8.0+cu128",
+      "transformers": "5.5.0",
+      "trl": "0.24.0",
+      "unsloth": "2026.9.11",
+      "unsloth_zoo": "2026.9.7"
+    },
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "hyperparameters": {
+    "completion_only_loss": true,
+    "effective_batch_size": 48,
+    "epochs": 3.0,
+    "eval_batch_size": 2,
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 0.0002,
+    "lora_alpha": 16,
+    "lora_dropout": 0,
+    "lora_rank": 16,
+    "lora_targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "lr_scheduler_type": "cosine",
+    "max_length": 2048,
+    "seed": 3407,
+    "smoke_steps": null,
+    "smoke_test": false,
+    "train_batch_size": 48,
+    "warmup_ratio": 0.1
+  },
+  "model": "Qwen/Qwen3.5-2B",
+  "model_revision_requested": "main",
+  "model_revision_resolved": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "precision": "bf16",
+  "records_used": {
+    "train": 300,
+    "validation": 90
+  },
+  "run_name": "sft-qwen35-2b-seed3407",
+  "stage": "sft",
+  "started_at": "2026-09-26T12:22:27.447833+00:00",
+  "token_audit": {
+    "train": {
+      "max_length": 2048,
+      "over_limit": [],
+      "records": 300,
+      "split": "train",
+      "tokens": {
+        "max": 1329,
+        "min": 729,
+        "p50": 1021,
+        "p95": 1304
+      }
+    },
+    "validation": {
+      "max_length": 2048,
+      "over_limit": [],
+      "records": 90,
+      "split": "validation",
+      "tokens": {
+        "max": 1319,
+        "min": 842,
+        "p50": 1023,
+        "p95": 1302
+      }
+    }
+  },
+  "trainable_parameters": 10911744
+}

@@ -1,0 +1,18 @@
+# Use the existing CUDA-enabled PyTorch installation. Check the pip resolver's
+# plan before installing, and do not replace torch/torchvision CUDA wheels.
+unsloth==2026.9.11
+transformers>=5.2,<5.6
+datasets>=3.4.1,<4.4
+accelerate>=0.34.1
+peft>=0.18.0
+trl>=0.18.2,<=0.24.0
+bitsandbytes>=0.45.5,!=0.46.0,!=0.48.0
+# xformers 0.0.32.post2 pairs with the pod's existing PyTorch 2.8.
+xformers==0.0.32.post2
+# Qwen3.5 fast path. The causal-conv1d wheel is for this RunPod's Python 3.12,
+# PyTorch 2.8, CUDA 12, CXX11 ABI, and Linux x86_64 environment.
+flash-linear-attention[cuda]==0.5.2
+ninja==1.13.2
+causal-conv1d @ https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0%2Bcu12torch2.8cxx11abiTRUE-cp312-cp312-linux_x86_64.whl#sha256=a1fcd5d022b67ddfc9e1c291f890004c1c081a03d66b532f6eebe31219168e0e
+tensorboard>=2.18
+matplotlib>=3.9

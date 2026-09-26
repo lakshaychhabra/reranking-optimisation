@@ -1,0 +1,14 @@
+{
+  "cache_dir": "artifacts/cache/final_quotes",
+  "cache_hits": 0,
+  "errors": 0,
+  "input_scenarios_considered": 2000,
+  "insufficient_quote_scenarios": 332,
+  "mode": "execute-live",
+  "no_quote_scenarios": 178,
+  "output_path": "artifacts/quoted/final_quoted_scenarios.jsonl",
+  "stop_reason": "max_live_calls_reached",
+  "successful_scenarios": 1490,
+  "total_records_in_output": 1490,
+  "uncached_calls": 2000
+}

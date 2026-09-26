@@ -1,0 +1,45 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local credentials. A sanitized template may still be committed later.
+.env
+.env.*
+!.env.example
+
+# OS/editor files and temporary renders
+.DS_Store
+**/.DS_Store
+tmp/
+*.log
+
+# Internal working notes used to assemble the final report
+gpt.md
+CLAUDE.md
+
+# Generated datasets and API intermediates. Keep compact JSON/Markdown
+# summaries, manifests, distributions, hashes, and frozen configurations.
+artifacts/cache/
+artifacts/pilots/
+artifacts/quoted_old/
+artifacts/scenarios_old/
+artifacts/teacher/requests/
+artifacts/teacher/raw/
+artifacts/teacher/annotations/
+artifacts/**/*.jsonl
+
+# Local model-training outputs
+artifacts/models/
+artifacts/reproduction/
+artifacts/checkpoints/
+artifacts/training_runs/
+artifacts/training/runs/
+artifacts/runpod/
+checkpoints/
+runs/
+wandb/

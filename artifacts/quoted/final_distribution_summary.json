@@ -1,0 +1,527 @@
+{
+  "cache_dir": "artifacts/cache/final_quotes",
+  "collection_funnel": {
+    "attempts": 2000,
+    "by_age_stratum": {
+      "middle": {
+        "attempts": 658,
+        "statuses": {
+          "insufficient_quotes": 139,
+          "no_quotes": 17,
+          "success": 502
+        },
+        "success_rate_pct": 76.29,
+        "successes": 502
+      },
+      "modern": {
+        "attempts": 677,
+        "statuses": {
+          "insufficient_quotes": 151,
+          "no_quotes": 29,
+          "success": 497
+        },
+        "success_rate_pct": 73.41,
+        "successes": 497
+      },
+      "old": {
+        "attempts": 665,
+        "statuses": {
+          "insufficient_quotes": 42,
+          "no_quotes": 132,
+          "success": 491
+        },
+        "success_rate_pct": 73.83,
+        "successes": 491
+      }
+    },
+    "by_building_type": {
+      "multi-family": {
+        "attempts": 385,
+        "statuses": {
+          "insufficient_quotes": 100,
+          "no_quotes": 34,
+          "success": 251
+        },
+        "success_rate_pct": 65.19,
+        "successes": 251
+      },
+      "semi-detached": {
+        "attempts": 414,
+        "statuses": {
+          "insufficient_quotes": 50,
+          "no_quotes": 78,
+          "success": 286
+        },
+        "success_rate_pct": 69.08,
+        "successes": 286
+      },
+      "single-family": {
+        "attempts": 422,
+        "statuses": {
+          "insufficient_quotes": 58,
+          "no_quotes": 18,
+          "success": 346
+        },
+        "success_rate_pct": 81.99,
+        "successes": 346
+      },
+      "terraced": {
+        "attempts": 397,
+        "statuses": {
+          "insufficient_quotes": 57,
+          "no_quotes": 27,
+          "success": 313
+        },
+        "success_rate_pct": 78.84,
+        "successes": 313
+      },
+      "two-family": {
+        "attempts": 382,
+        "statuses": {
+          "insufficient_quotes": 67,
+          "no_quotes": 21,
+          "success": 294
+        },
+        "success_rate_pct": 76.96,
+        "successes": 294
+      }
+    },
+    "by_construction_class": {
+      "BAK1": {
+        "attempts": 408,
+        "statuses": {
+          "insufficient_quotes": 4,
+          "no_quotes": 15,
+          "success": 389
+        },
+        "success_rate_pct": 95.34,
+        "successes": 389
+      },
+      "BAK2": {
+        "attempts": 405,
+        "statuses": {
+          "insufficient_quotes": 5,
+          "no_quotes": 12,
+          "success": 388
+        },
+        "success_rate_pct": 95.8,
+        "successes": 388
+      },
+      "FHG1": {
+        "attempts": 402,
+        "statuses": {
+          "insufficient_quotes": 24,
+          "no_quotes": 16,
+          "success": 362
+        },
+        "success_rate_pct": 90.05,
+        "successes": 362
+      },
+      "FHG2": {
+        "attempts": 388,
+        "statuses": {
+          "insufficient_quotes": 14,
+          "no_quotes": 23,
+          "success": 351
+        },
+        "success_rate_pct": 90.46,
+        "successes": 351
+      },
+      "FHG3": {
+        "attempts": 397,
+        "statuses": {
+          "insufficient_quotes": 285,
+          "no_quotes": 112
+        },
+        "success_rate_pct": 0.0,
+        "successes": 0
+      }
+    },
+    "by_hazard_tier": {
+      "elevated": {
+        "attempts": 618,
+        "statuses": {
+          "insufficient_quotes": 111,
+          "no_quotes": 49,
+          "success": 458
+        },
+        "success_rate_pct": 74.11,
+        "successes": 458
+      },
+      "high": {
+        "attempts": 600,
+        "statuses": {
+          "insufficient_quotes": 101,
+          "no_quotes": 45,
+          "success": 454
+        },
+        "success_rate_pct": 75.67,
+        "successes": 454
+      },
+      "moderate": {
+        "attempts": 782,
+        "statuses": {
+          "insufficient_quotes": 120,
+          "no_quotes": 84,
+          "success": 578
+        },
+        "success_rate_pct": 73.91,
+        "successes": 578
+      }
+    },
+    "statuses": {
+      "insufficient_quotes": 332,
+      "no_quotes": 178,
+      "success": 1490
+    },
+    "success_rate_pct": 74.5,
+    "successes": 1490
+  },
+  "dataset": {
+    "successful_scenarios": 1490,
+    "total_quotes": 9632,
+    "unique_insurers": 5,
+    "unique_products": 9,
+    "unique_scenario_ids": 1490,
+    "unique_tariff_ids": 9
+  },
+  "generated_at": "2026-09-25T20:17:10.992851+00:00",
+  "input": "artifacts/quoted/final_quoted_scenarios.jsonl",
+  "market_distribution": {
+    "insurers": {
+      "Baloise": {
+        "count": 1118,
+        "pct": 11.61
+      },
+      "BesserGruen": {
+        "count": 2934,
+        "pct": 30.46
+      },
+      "Gothaer": {
+        "count": 1551,
+        "pct": 16.1
+      },
+      "NV-Versicherung": {
+        "count": 2934,
+        "pct": 30.46
+      },
+      "VdVA": {
+        "count": 1095,
+        "pct": 11.37
+      }
+    },
+    "products": {
+      "Baloise :: Baloise": {
+        "count": 1118,
+        "pct": 11.61
+      },
+      "BesserGruen :: Wohnhausmax.-2.0-bessergruen": {
+        "count": 1467,
+        "pct": 15.23
+      },
+      "BesserGruen :: Wohnhauspremium-bessergruen": {
+        "count": 1467,
+        "pct": 15.23
+      },
+      "Gothaer :: Basis": {
+        "count": 517,
+        "pct": 5.37
+      },
+      "Gothaer :: Plus": {
+        "count": 517,
+        "pct": 5.37
+      },
+      "Gothaer :: Premium": {
+        "count": 517,
+        "pct": 5.37
+      },
+      "NV-Versicherung :: Wohnhausmax.-2.0": {
+        "count": 1467,
+        "pct": 15.23
+      },
+      "NV-Versicherung :: Wohnhauspremium": {
+        "count": 1467,
+        "pct": 15.23
+      },
+      "VdVA :: Allstern": {
+        "count": 1095,
+        "pct": 11.37
+      }
+    },
+    "reward_recommended_insurers": {
+      "Baloise": {
+        "count": 601,
+        "pct": 40.34
+      },
+      "Gothaer": {
+        "count": 458,
+        "pct": 30.74
+      },
+      "NV-Versicherung": {
+        "count": 334,
+        "pct": 22.42
+      },
+      "VdVA": {
+        "count": 97,
+        "pct": 6.51
+      }
+    }
+  },
+  "quote_statistics": {
+    "annual_price_all_quotes": {
+      "count": 9632,
+      "max": 7161.93,
+      "mean": 1131.2825,
+      "median": 1009.895,
+      "min": 42.17,
+      "p10": 484.13,
+      "p25": 693.795,
+      "p75": 1439.23,
+      "p90": 1946.886
+    },
+    "annual_price_reward_recommended": {
+      "count": 1490,
+      "max": 3306.85,
+      "mean": 861.5206,
+      "median": 778.065,
+      "min": 42.17,
+      "p10": 265.92,
+      "p25": 503.22,
+      "p75": 1140.925,
+      "p90": 1520.515
+    },
+    "coverage_score_all_quotes": {
+      "count": 9632,
+      "max": 79.0,
+      "mean": 56.3054,
+      "median": 56.0,
+      "min": 25.0,
+      "p10": 46.0,
+      "p25": 48.0,
+      "p75": 58.0,
+      "p90": 78.0
+    },
+    "coverage_score_reward_recommended": {
+      "count": 1490,
+      "max": 79.0,
+      "mean": 54.9087,
+      "median": 48.0,
+      "min": 25.0,
+      "p10": 25.0,
+      "p25": 29.0,
+      "p75": 77.0,
+      "p90": 77.0
+    },
+    "deductible_values": {
+      "0": {
+        "count": 9632,
+        "pct": 100.0
+      }
+    },
+    "insured_amount_unlimited": 1095,
+    "num_coverages_values": {
+      "1": {
+        "count": 3628,
+        "pct": 37.67
+      },
+      "2": {
+        "count": 6004,
+        "pct": 62.33
+      }
+    },
+    "price_coverage_score_pearson": 0.1344,
+    "quotes_per_scenario": {
+      "count": 1490,
+      "max": 9.0,
+      "mean": 6.4644,
+      "median": 6.0,
+      "min": 3.0,
+      "p10": 4.0,
+      "p25": 6.0,
+      "p75": 8.75,
+      "p90": 9.0
+    },
+    "reward_all_quotes": {
+      "count": 9632,
+      "max": 0.65,
+      "mean": 0.3543,
+      "median": 0.3332,
+      "min": 0.175,
+      "p10": 0.25,
+      "p25": 0.2715,
+      "p75": 0.4257,
+      "p90": 0.5
+    },
+    "top1_top2_reward_margin": {
+      "count": 1490,
+      "max": 0.2491,
+      "mean": 0.0815,
+      "median": 0.0833,
+      "min": 0.0001,
+      "p10": 0.0247,
+      "p25": 0.0418,
+      "p75": 0.109,
+      "p90": 0.1454
+    }
+  },
+  "reward_signal_diagnostics": {
+    "coverage_score": {
+      "flat_scenarios": 0,
+      "varying_pct": 100.0,
+      "varying_scenarios": 1490
+    },
+    "deductible": {
+      "flat_scenarios": 1490,
+      "varying_pct": 0.0,
+      "varying_scenarios": 0
+    },
+    "insured_amount": {
+      "flat_scenarios": 270,
+      "varying_pct": 81.88,
+      "varying_scenarios": 1220
+    },
+    "num_coverages": {
+      "flat_scenarios": 1490,
+      "varying_pct": 0.0,
+      "varying_scenarios": 0
+    },
+    "price_annual": {
+      "flat_scenarios": 0,
+      "varying_pct": 100.0,
+      "varying_scenarios": 1490
+    }
+  },
+  "scenario_distribution": {
+    "age_stratum": {
+      "middle": {
+        "count": 502,
+        "pct": 33.69
+      },
+      "modern": {
+        "count": 497,
+        "pct": 33.36
+      },
+      "old": {
+        "count": 491,
+        "pct": 32.95
+      }
+    },
+    "attic_status": {
+      "converted": {
+        "count": 370,
+        "pct": 24.83
+      },
+      "none": {
+        "count": 377,
+        "pct": 25.3
+      },
+      "not-converted": {
+        "count": 375,
+        "pct": 25.17
+      },
+      "partially-converted": {
+        "count": 368,
+        "pct": 24.7
+      }
+    },
+    "building_type": {
+      "multi-family": {
+        "count": 251,
+        "pct": 16.85
+      },
+      "semi-detached": {
+        "count": 286,
+        "pct": 19.19
+      },
+      "single-family": {
+        "count": 346,
+        "pct": 23.22
+      },
+      "terraced": {
+        "count": 313,
+        "pct": 21.01
+      },
+      "two-family": {
+        "count": 294,
+        "pct": 19.73
+      }
+    },
+    "construction_class": {
+      "BAK1": {
+        "count": 389,
+        "pct": 26.11
+      },
+      "BAK2": {
+        "count": 388,
+        "pct": 26.04
+      },
+      "FHG1": {
+        "count": 362,
+        "pct": 24.3
+      },
+      "FHG2": {
+        "count": 351,
+        "pct": 23.56
+      }
+    },
+    "hazard_tier": {
+      "elevated": {
+        "count": 458,
+        "pct": 30.74
+      },
+      "high": {
+        "count": 454,
+        "pct": 30.47
+      },
+      "moderate": {
+        "count": 578,
+        "pct": 38.79
+      }
+    },
+    "natural_hazard_requested": {
+      "False": {
+        "count": 578,
+        "pct": 38.79
+      },
+      "True": {
+        "count": 912,
+        "pct": 61.21
+      }
+    },
+    "owner_occupied": {
+      "False": {
+        "count": 436,
+        "pct": 29.26
+      },
+      "True": {
+        "count": 1054,
+        "pct": 70.74
+      }
+    },
+    "roof_type": {
+      "flat": {
+        "count": 494,
+        "pct": 33.15
+      },
+      "gable": {
+        "count": 480,
+        "pct": 32.21
+      },
+      "other": {
+        "count": 516,
+        "pct": 34.63
+      }
+    },
+    "with_deductible": {
+      "False": {
+        "count": 739,
+        "pct": 49.6
+      },
+      "True": {
+        "count": 751,
+        "pct": 50.4
+      }
+    }
+  },
+  "seed": 42
+}

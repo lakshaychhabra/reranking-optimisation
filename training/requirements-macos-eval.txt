@@ -1,0 +1,9 @@
+# Portable Apple-Silicon inference only. Training remains on the CUDA stack.
+torch==2.8.0
+torchvision==0.23.0
+transformers==5.5.0
+peft==0.21.0
+accelerate==1.15.0
+safetensors>=0.6,<0.8
+sentencepiece>=0.2,<0.3
+pillow>=11,<13

@@ -1,0 +1,79 @@
+{
+  "checks": {
+    "golden_records_used": 0,
+    "rewards_precomputed_from_frozen_weights": true,
+    "train_teacher_labels_used": 0,
+    "train_validation_disjoint": true
+  },
+  "format": "TRL conversational prompts with frozen per-tariff business rewards",
+  "prompt_source": "src/prompts.py: BROKER_SYSTEM + build_broker_prompt(include_rationales=False)",
+  "reward_components": [
+    "strict_json_reward",
+    "valid_tariffs_reward",
+    "calibrated_top1_reward",
+    "calibrated_ranking_reward"
+  ],
+  "reward_source": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/reward_calibration/best_weights.json",
+    "sha256": "735f900d8bb043cc694c8f57a73ed01723389225611ba7a50d1e3db7ee6ac318",
+    "weights": {
+      "w_cov": 0.0928034111891159,
+      "w_ded": 0.06960255839183692,
+      "w_ins": 0.4102710203778362,
+      "w_price": 1.793611631132337,
+      "w_score": 0.42732301004121104
+    }
+  },
+  "splits": {
+    "train": {
+      "output": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/training/grpo_data/train.jsonl",
+        "sha256": "f93a7a9291aa3acf938e75bced912ee0d393853322ba7fb3fbbe707776e3d81e"
+      },
+      "prompt_characters": {
+        "max": 3554,
+        "min": 2107,
+        "p50": 2791,
+        "p95": 3486
+      },
+      "quote_counts": {
+        "max": 9,
+        "min": 3,
+        "p50": 6
+      },
+      "records": 810,
+      "source": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/grpo_train.jsonl",
+        "sha256": "368f8141e69fa36a981ff366b0da87bce285a2ead0918d35bdd174b185ea142b"
+      },
+      "unique_scenario_ids": 810
+    },
+    "validation": {
+      "output": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/training/grpo_data/validation.jsonl",
+        "sha256": "fb78e73af23420338b504741a9115be4abdb035f9cdf905ebafd8362d56f7d89"
+      },
+      "prompt_characters": {
+        "max": 3602,
+        "min": 2247,
+        "p50": 2791,
+        "p95": 3474
+      },
+      "quote_counts": {
+        "max": 9,
+        "min": 4,
+        "p50": 6
+      },
+      "records": 90,
+      "source": {
+        "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/grpo_validation.jsonl",
+        "sha256": "56e96d73a877eff594282a154db9458a0916973f1116d8e09170faddb59b459e"
+      },
+      "unique_scenario_ids": 90
+    }
+  },
+  "teacher_policy": {
+    "train": "absent",
+    "validation": "teacher_top3 retained for offline monitoring only; never passed into a reward function"
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "schema_version": 1,
+  "purpose": "Machine-readable experiment ledger for later tables and plots. Append a new run object; never overwrite historical measurements.",
+  "metric_definitions": {
+    "top1_accuracy": "Fraction of scenarios where the predicted rank-1 tariff equals the teacher rank-1 tariff.",
+    "top3_recall": "Fraction of the teacher's three selected tariff IDs recovered in the predicted top three.",
+    "pairwise_accuracy": "Fraction of teacher-implied pairwise ordering decisions reproduced by the predicted ranking.",
+    "mean_supplied_reward_ratio": "Mean supplied/default reward of the selected tariff divided by the scenario reward-argmax value."
+  },
+  "runs": [
+    {
+      "run_id": "reward-calibration-random-search-20260926",
+      "stage": "reward_calibration",
+      "status": "complete_frozen",
+      "script": "reward_calibration/calibrate.py",
+      "dataset": {
+        "name": "reward_calibration",
+        "scenarios": 200,
+        "sha256": "6ead12659ceb5b780993988cc64cdb6e66f535a55cef1cad1cdbc73d303dcfd6"
+      },
+      "configuration": {
+        "seed": 20260926,
+        "candidates": 20000,
+        "folds": 5,
+        "search_type": "random_simplex",
+        "selection_order": [
+          "top1_accuracy",
+          "top3_recall",
+          "pairwise_accuracy",
+          "proximity_to_default"
+        ],
+        "price_weight_range": [
+          0.0,
+          5.0
+        ],
+        "protection_parameterization": "simplex(static=w_cov+w_ded, insured, score)",
+        "static_weight_ratio": "w_cov:w_ded = 4:3"
+      },
+      "results": [
+        {
+          "variant": "supplied_default",
+          "evaluation_scope": "full_calibration_set",
+          "weights": {
+            "w_cov": 0.4,
+            "w_ins": 0.3,
+            "w_ded": 0.3,
+            "w_price": 1.0,
+            "w_score": 0.0
+          },
+          "metrics": {
+            "scenarios": 200,
+            "top1_accuracy": 0.49,
+            "top1_correct": 98,
+            "top3_recall": 0.688333,
+            "top3_hits": 413,
+            "pairwise_accuracy": 0.760703,
+            "pairwise_correct": 2079,
+            "pairwise_total": 2733
+          }
+        },
+        {
+          "variant": "selected_candidate_15957",
+          "evaluation_scope": "full_calibration_set",
+          "weights": {
+            "w_cov": 0.0928034111891159,
+            "w_ins": 0.4102710203778362,
+            "w_ded": 0.06960255839183692,
+            "w_price": 1.793611631132337,
+            "w_score": 0.42732301004121104
+          },
+          "metrics": {
+            "scenarios": 200,
+            "top1_accuracy": 0.94,
+            "top1_correct": 188,
+            "top3_recall": 0.841667,
+            "top3_hits": 505,
+            "pairwise_accuracy": 0.92243,
+            "pairwise_correct": 2521,
+            "pairwise_total": 2733
+          }
+        },
+        {
+          "variant": "nested_cross_validation",
+          "evaluation_scope": "five_held_out_folds_aggregated",
+          "metrics": {
+            "scenarios": 200,
+            "top1_accuracy": 0.94,
+            "top1_correct": 188,
+            "top3_recall": 0.841667,
+            "top3_hits": 505,
+            "pairwise_accuracy": 0.92243,
+            "pairwise_correct": 2521,
+            "pairwise_total": 2733
+          }
+        }
+      ],
+      "artifacts": {
+        "weights": "artifacts/reward_calibration/best_weights.json",
+        "summary": "artifacts/reward_calibration/calibration_summary.json",
+        "report": "artifacts/reward_calibration/calibration_report.md"
+      }
+    },
+    {
+      "run_id": "reward-calibration-permutation-control-20260926",
+      "stage": "reward_validation",
+      "status": "passed",
+      "script": "reward_calibration/validate_frozen.py",
+      "dataset": {
+        "name": "reward_calibration_with_permuted_teacher_rankings",
+        "scenarios": 200,
+        "source_sha256": "6ead12659ceb5b780993988cc64cdb6e66f535a55cef1cad1cdbc73d303dcfd6"
+      },
+      "configuration": {
+        "seed": 20352659,
+        "candidates": 20000,
+        "folds": 5,
+        "pass_rule": "nested held-out top1 <= theoretical random top1 + 0.05"
+      },
+      "results": [
+        {
+          "variant": "theoretical_random_expectation",
+          "evaluation_scope": "expected",
+          "metrics": {
+            "scenarios": 200,
+            "top1_accuracy": 0.163079,
+            "top3_recall": 0.489238
+          }
+        },
+        {
+          "variant": "permuted_nested_cross_validation",
+          "evaluation_scope": "five_held_out_folds_aggregated",
+          "metrics": {
+            "scenarios": 200,
+            "top1_accuracy": 0.2,
+            "top1_correct": 40,
+            "top3_recall": 0.483333,
+            "top3_hits": 290,
+            "pairwise_accuracy": 0.499085,
+            "pairwise_correct": 1364,
+            "pairwise_total": 2733
+          }
+        }
+      ],
+      "artifacts": {
+        "summary": "artifacts/reward_calibration/validation/validation_summary.json",
+        "report": "artifacts/reward_calibration/validation/validation_report.md"
+      }
+    },
+    {
+      "run_id": "frozen-reward-silver-validation-20260926",
+      "stage": "reward_validation",
+      "status": "complete_weights_unchanged",
+      "script": "reward_calibration/validate_frozen.py",
+      "dataset": {
+        "name": "grpo_validation",
+        "scenarios": 90,
+        "sha256": "56e96d73a877eff594282a154db9458a0916973f1116d8e09170faddb59b459e"
+      },
+      "results": [
+        {
+          "variant": "supplied_default",
+          "evaluation_scope": "held_out_silver_validation",
+          "metrics": {
+            "scenarios": 90,
+            "top1_accuracy": 0.466667,
+            "top1_correct": 42,
+            "top3_recall": 0.685185,
+            "top3_hits": 185,
+            "pairwise_accuracy": 0.739635,
+            "pairwise_correct": 892,
+            "pairwise_total": 1206
+          }
+        },
+        {
+          "variant": "frozen_candidate_15957",
+          "evaluation_scope": "held_out_silver_validation",
+          "metrics": {
+            "scenarios": 90,
+            "top1_accuracy": 0.933333,
+            "top1_correct": 84,
+            "top3_recall": 0.82963,
+            "top3_hits": 224,
+            "pairwise_accuracy": 0.913765,
+            "pairwise_correct": 1102,
+            "pairwise_total": 1206
+          }
+        }
+      ],
+      "artifacts": {
+        "summary": "artifacts/reward_calibration/validation/validation_summary.json",
+        "report": "artifacts/reward_calibration/validation/validation_report.md"
+      }
+    },
+    {
+      "run_id": "frozen-reward-locked-golden-20260926",
+      "stage": "golden_evaluation",
+      "status": "complete_locked",
+      "script": "reward_calibration/validate_frozen.py",
+      "dataset": {
+        "name": "golden_wg_recommendations",
+        "scenarios": 50,
+        "sha256": "864123d2f1c2741f94cfef94ebdd09ecc6eb6d1b3fe898212441ad99b54eaa33"
+      },
+      "results": [
+        {
+          "variant": "supplied_default_reward_argmax",
+          "evaluation_scope": "locked_golden",
+          "metrics": {
+            "scenarios": 50,
+            "top1_accuracy": 0.38,
+            "top1_correct": 19,
+            "top3_recall": 0.653333,
+            "top3_hits": 98,
+            "pairwise_accuracy": 0.660163,
+            "pairwise_correct": 406,
+            "pairwise_total": 615,
+            "mean_supplied_reward_ratio": 1.0
+          }
+        },
+        {
+          "variant": "frozen_candidate_15957",
+          "evaluation_scope": "locked_golden",
+          "metrics": {
+            "scenarios": 50,
+            "top1_accuracy": 0.84,
+            "top1_correct": 42,
+            "top3_recall": 0.793333,
+            "top3_hits": 119,
+            "pairwise_accuracy": 0.904065,
+            "pairwise_correct": 556,
+            "pairwise_total": 615,
+            "mean_supplied_reward_ratio": 0.811724
+          }
+        }
+      ],
+      "notes": [
+        "The frozen weights were not reselected on the golden set.",
+        "The golden set was not used during calibration.",
+        "This deterministic reward baseline is not a trained language-model result."
+      ],
+      "artifacts": {
+        "summary": "artifacts/reward_calibration/validation/validation_summary.json",
+        "report": "artifacts/reward_calibration/validation/validation_report.md",
+        "per_scenario": "artifacts/reward_calibration/validation/golden_per_scenario.jsonl"
+      }
+    },
+    {
+      "run_id": "grpo-pipeline-preparation-20260926",
+      "stage": "grpo_preparation",
+      "status": "prepared_not_trained",
+      "script": "training/grpo/prepare_data.py",
+      "dataset": {
+        "train_scenarios": 810,
+        "validation_scenarios": 90,
+        "train_sha256": "f93a7a9291aa3acf938e75bced912ee0d393853322ba7fb3fbbe707776e3d81e",
+        "validation_sha256": "fb78e73af23420338b504741a9115be4abdb035f9cdf905ebafd8362d56f7d89",
+        "teacher_labels_in_train": 0,
+        "golden_records_used": 0
+      },
+      "planned_configuration": {
+        "initialization": "selected SFT LoRA adapter",
+        "max_steps": 50,
+        "learning_rate": 0.000005,
+        "num_generations": 4,
+        "max_completion_length": 128,
+        "beta": 0.001,
+        "loss_type": "dr_grpo",
+        "scale_rewards": false,
+        "use_vllm": false,
+        "checkpoint_interval_steps": 10,
+        "long_run_guard_steps": 100,
+        "reward_component_weights": {
+          "strict_json_reward": 0.1,
+          "valid_tariffs_reward": 0.1,
+          "calibrated_top1_reward": 0.4,
+          "calibrated_ranking_reward": 0.4
+        }
+      },
+      "checks": {
+        "all_900_records_checked": true,
+        "train_validation_disjoint": true,
+        "reward_components_bounded_zero_to_one": true,
+        "ideal_frozen_ranking_receives_full_business_rewards": true,
+        "gpu_smoke_test_complete": false
+      },
+      "artifacts": {
+        "manifest": "artifacts/training/grpo_data/manifest.json",
+        "code": "training/grpo/"
+      }
+    }
+  ]
+}

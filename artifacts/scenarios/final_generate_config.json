@@ -1,0 +1,7 @@
+{
+  "golden_path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/data/golden_wg_recommendations.jsonl",
+  "golden_risks_loaded": 50,
+  "n": 2400,
+  "output": "artifacts/scenarios/final_candidates.jsonl",
+  "seed": 20260925
+}

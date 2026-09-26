@@ -1,0 +1,50 @@
+{
+  "adapter": "/root/wg-recommendation/artifacts/training/runs/sft-qwen35-2b-seed3407/final_adapter",
+  "adapter_sha256": "f3bbd9330f353c038ce3d9e2338c76b6f5cd4b036ee81cd23bc7ed510c66bf48",
+  "base_model": "Qwen/Qwen3.5-2B",
+  "completed_at": "2026-09-26T12:59:54.357295+00:00",
+  "dataset": "/root/wg-recommendation/artifacts/splits/grpo_validation.jsonl",
+  "dataset_sha256": "56e96d73a877eff594282a154db9458a0916973f1116d8e09170faddb59b459e",
+  "environment": {
+    "cuda": "12.8",
+    "gpu": "NVIDIA RTX A6000",
+    "packages": {
+      "peft": "0.21.0",
+      "torch": "2.8.0+cu128",
+      "transformers": "5.5.0",
+      "unsloth": "2026.9.11",
+      "unsloth_zoo": "2026.9.7"
+    },
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "precision": "bf16",
+    "python": "3.12.3"
+  },
+  "generation": {
+    "do_sample": false,
+    "max_new_tokens": 700,
+    "max_seq_length": 2048,
+    "thinking": false
+  },
+  "generation_seconds": 200.865,
+  "golden": false,
+  "metrics": {
+    "mean_completion_tokens": 43.267,
+    "mean_prompt_tokens": 1023.578,
+    "recommendations_per_second": 0.448063,
+    "reward_ratio": 0.856095,
+    "reward_ratio_valid_picks_only": 0.856095,
+    "strict_json_rate": 1.0,
+    "top1_accuracy": 0.922222,
+    "top1_correct": 83,
+    "top3_recall": 0.87037,
+    "valid_three_unique_tariffs_rate": 1.0,
+    "valid_top1_tariff_rate": 1.0
+  },
+  "model_load_seconds": 149.099,
+  "model_revision": "main",
+  "model_revision_resolved": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "reward_definition": "supplied per-quote reward already stored in the evaluation dataset; no calibrated weights applied",
+  "run_name": "grpo-validation-sft-baseline",
+  "scenarios": 90,
+  "stage": "sft"
+}

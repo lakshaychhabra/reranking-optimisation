@@ -1,0 +1,929 @@
+{
+  "assignments": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/split_assignments.jsonl",
+    "records": 1490,
+    "sha256": "8bba917731e9d4ca153d5ff1158baa866549f1813f6def182a95cba903a14ee6"
+  },
+  "checks": {
+    "assigned_records": 1490,
+    "disjoint_and_exhaustive": true,
+    "golden_risk_overlap": 0,
+    "quoted_annotation_ids_match": true,
+    "source_records": 1490,
+    "unique_assigned_ids": 1490,
+    "unique_source_ids": 1490
+  },
+  "distribution_report": {
+    "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/split_distribution_report.md",
+    "sha256": "2e7a292a61a8473030ad1788b8f014d82c679e10e40c1e0c8e62fd620aac8093"
+  },
+  "hierarchy": {
+    "stage_1": {
+      "grpo_pool": 900,
+      "reward_calibration": 200,
+      "sft_pool": 390
+    },
+    "stage_2": {
+      "grpo_pool": {
+        "grpo_train": 810,
+        "grpo_validation": 90
+      },
+      "sft_pool": {
+        "sft_train": 300,
+        "sft_validation": 90
+      }
+    }
+  },
+  "label_policy": {
+    "grpo_train": "teacher_annotation intentionally omitted",
+    "grpo_validation": "teacher_annotation included for offline monitoring",
+    "reward_calibration": "teacher_annotation included",
+    "sft_train": "teacher_annotation included",
+    "sft_validation": "teacher_annotation included"
+  },
+  "seed": 20260925,
+  "source_distribution": {
+    "age_stratum": {
+      "middle": {
+        "count": 502,
+        "pct": 33.6913
+      },
+      "modern": {
+        "count": 497,
+        "pct": 33.3557
+      },
+      "old": {
+        "count": 491,
+        "pct": 32.953
+      }
+    },
+    "building_type": {
+      "multi-family": {
+        "count": 251,
+        "pct": 16.8456
+      },
+      "semi-detached": {
+        "count": 286,
+        "pct": 19.1946
+      },
+      "single-family": {
+        "count": 346,
+        "pct": 23.2215
+      },
+      "terraced": {
+        "count": 313,
+        "pct": 21.0067
+      },
+      "two-family": {
+        "count": 294,
+        "pct": 19.7315
+      }
+    },
+    "construction_class": {
+      "bak1": {
+        "count": 389,
+        "pct": 26.1074
+      },
+      "bak2": {
+        "count": 388,
+        "pct": 26.0403
+      },
+      "fhg1": {
+        "count": 362,
+        "pct": 24.2953
+      },
+      "fhg2": {
+        "count": 351,
+        "pct": 23.557
+      }
+    },
+    "hazard_tier": {
+      "elevated": {
+        "count": 458,
+        "pct": 30.7383
+      },
+      "high": {
+        "count": 454,
+        "pct": 30.4698
+      },
+      "moderate": {
+        "count": 578,
+        "pct": 38.7919
+      }
+    },
+    "natural_hazard_requested": {
+      "false": {
+        "count": 578,
+        "pct": 38.7919
+      },
+      "true": {
+        "count": 912,
+        "pct": 61.2081
+      }
+    },
+    "owner_occupied": {
+      "false": {
+        "count": 436,
+        "pct": 29.2617
+      },
+      "true": {
+        "count": 1054,
+        "pct": 70.7383
+      }
+    }
+  },
+  "sources": {
+    "annotations": {
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/teacher/annotations.jsonl",
+      "sha256": "b4d473f7abf3c7414ead2e0b680de910f4e48cd0d3720ed2b18274fbb50d49cf"
+    },
+    "golden_exclusion_check": {
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/data/golden_wg_recommendations.jsonl",
+      "records": 50
+    },
+    "quoted": {
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/quoted/final_quoted_scenarios.jsonl",
+      "sha256": "710537bcfab97b74625f27a62ac0ac455a84c118d53180be5be3349fdac37885"
+    }
+  },
+  "splits": {
+    "grpo_train": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 274,
+            "pct": 33.8272
+          },
+          "modern": {
+            "count": 271,
+            "pct": 33.4568
+          },
+          "old": {
+            "count": 265,
+            "pct": 32.716
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 136,
+            "pct": 16.7901
+          },
+          "semi-detached": {
+            "count": 155,
+            "pct": 19.1358
+          },
+          "single-family": {
+            "count": 191,
+            "pct": 23.5802
+          },
+          "terraced": {
+            "count": 169,
+            "pct": 20.8642
+          },
+          "two-family": {
+            "count": 159,
+            "pct": 19.6296
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 210,
+            "pct": 25.9259
+          },
+          "bak2": {
+            "count": 212,
+            "pct": 26.1728
+          },
+          "fhg1": {
+            "count": 197,
+            "pct": 24.321
+          },
+          "fhg2": {
+            "count": 191,
+            "pct": 23.5802
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 250,
+            "pct": 30.8642
+          },
+          "high": {
+            "count": 246,
+            "pct": 30.3704
+          },
+          "moderate": {
+            "count": 314,
+            "pct": 38.7654
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 314,
+            "pct": 38.7654
+          },
+          "true": {
+            "count": 496,
+            "pct": 61.2346
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 238,
+            "pct": 29.3827
+          },
+          "true": {
+            "count": 572,
+            "pct": 70.6173
+          }
+        }
+      },
+      "max_marginal_deviation_from_parent_percentage_points": 0.1728,
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/grpo_train.jsonl",
+      "records": 810,
+      "sha256": "368f8141e69fa36a981ff366b0da87bce285a2ead0918d35bdd174b185ea142b",
+      "teacher_annotation_included": false
+    },
+    "grpo_validation": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 30,
+            "pct": 33.3333
+          },
+          "modern": {
+            "count": 30,
+            "pct": 33.3333
+          },
+          "old": {
+            "count": 30,
+            "pct": 33.3333
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 15,
+            "pct": 16.6667
+          },
+          "semi-detached": {
+            "count": 18,
+            "pct": 20.0
+          },
+          "single-family": {
+            "count": 20,
+            "pct": 22.2222
+          },
+          "terraced": {
+            "count": 19,
+            "pct": 21.1111
+          },
+          "two-family": {
+            "count": 18,
+            "pct": 20.0
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 24,
+            "pct": 26.6667
+          },
+          "bak2": {
+            "count": 22,
+            "pct": 24.4444
+          },
+          "fhg1": {
+            "count": 22,
+            "pct": 24.4444
+          },
+          "fhg2": {
+            "count": 22,
+            "pct": 24.4444
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 27,
+            "pct": 30.0
+          },
+          "high": {
+            "count": 28,
+            "pct": 31.1111
+          },
+          "moderate": {
+            "count": 35,
+            "pct": 38.8889
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 35,
+            "pct": 38.8889
+          },
+          "true": {
+            "count": 55,
+            "pct": 61.1111
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 26,
+            "pct": 28.8889
+          },
+          "true": {
+            "count": 64,
+            "pct": 71.1111
+          }
+        }
+      },
+      "max_marginal_deviation_from_parent_percentage_points": 1.5556,
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/grpo_validation.jsonl",
+      "records": 90,
+      "sha256": "56e96d73a877eff594282a154db9458a0916973f1116d8e09170faddb59b459e",
+      "teacher_annotation_included": true
+    },
+    "reward_calibration": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 67,
+            "pct": 33.5
+          },
+          "modern": {
+            "count": 67,
+            "pct": 33.5
+          },
+          "old": {
+            "count": 66,
+            "pct": 33.0
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 34,
+            "pct": 17.0
+          },
+          "semi-detached": {
+            "count": 38,
+            "pct": 19.0
+          },
+          "single-family": {
+            "count": 45,
+            "pct": 22.5
+          },
+          "terraced": {
+            "count": 43,
+            "pct": 21.5
+          },
+          "two-family": {
+            "count": 40,
+            "pct": 20.0
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 52,
+            "pct": 26.0
+          },
+          "bak2": {
+            "count": 52,
+            "pct": 26.0
+          },
+          "fhg1": {
+            "count": 49,
+            "pct": 24.5
+          },
+          "fhg2": {
+            "count": 47,
+            "pct": 23.5
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 62,
+            "pct": 31.0
+          },
+          "high": {
+            "count": 61,
+            "pct": 30.5
+          },
+          "moderate": {
+            "count": 77,
+            "pct": 38.5
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 77,
+            "pct": 38.5
+          },
+          "true": {
+            "count": 123,
+            "pct": 61.5
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 58,
+            "pct": 29.0
+          },
+          "true": {
+            "count": 142,
+            "pct": 71.0
+          }
+        }
+      },
+      "max_marginal_deviation_from_parent_percentage_points": 0.7215,
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/reward_calibration.jsonl",
+      "records": 200,
+      "sha256": "6ead12659ceb5b780993988cc64cdb6e66f535a55cef1cad1cdbc73d303dcfd6",
+      "teacher_annotation_included": true
+    },
+    "sft_train": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 102,
+            "pct": 34.0
+          },
+          "modern": {
+            "count": 99,
+            "pct": 33.0
+          },
+          "old": {
+            "count": 99,
+            "pct": 33.0
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 50,
+            "pct": 16.6667
+          },
+          "semi-detached": {
+            "count": 58,
+            "pct": 19.3333
+          },
+          "single-family": {
+            "count": 70,
+            "pct": 23.3333
+          },
+          "terraced": {
+            "count": 63,
+            "pct": 21.0
+          },
+          "two-family": {
+            "count": 59,
+            "pct": 19.6667
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 80,
+            "pct": 26.6667
+          },
+          "bak2": {
+            "count": 78,
+            "pct": 26.0
+          },
+          "fhg1": {
+            "count": 73,
+            "pct": 24.3333
+          },
+          "fhg2": {
+            "count": 69,
+            "pct": 23.0
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 91,
+            "pct": 30.3333
+          },
+          "high": {
+            "count": 91,
+            "pct": 30.3333
+          },
+          "moderate": {
+            "count": 118,
+            "pct": 39.3333
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 118,
+            "pct": 39.3333
+          },
+          "true": {
+            "count": 182,
+            "pct": 60.6667
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 87,
+            "pct": 29.0
+          },
+          "true": {
+            "count": 213,
+            "pct": 71.0
+          }
+        }
+      },
+      "max_marginal_deviation_from_parent_percentage_points": 0.4103,
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/sft_train.jsonl",
+      "records": 300,
+      "sha256": "81d6e1409e09c2e32d204b7a8e5869e6639a7f7dfa1f5da9214450a808542203",
+      "teacher_annotation_included": true
+    },
+    "sft_validation": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 29,
+            "pct": 32.2222
+          },
+          "modern": {
+            "count": 30,
+            "pct": 33.3333
+          },
+          "old": {
+            "count": 31,
+            "pct": 34.4444
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 16,
+            "pct": 17.7778
+          },
+          "semi-detached": {
+            "count": 17,
+            "pct": 18.8889
+          },
+          "single-family": {
+            "count": 20,
+            "pct": 22.2222
+          },
+          "terraced": {
+            "count": 19,
+            "pct": 21.1111
+          },
+          "two-family": {
+            "count": 18,
+            "pct": 20.0
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 23,
+            "pct": 25.5556
+          },
+          "bak2": {
+            "count": 24,
+            "pct": 26.6667
+          },
+          "fhg1": {
+            "count": 21,
+            "pct": 23.3333
+          },
+          "fhg2": {
+            "count": 22,
+            "pct": 24.4444
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 28,
+            "pct": 31.1111
+          },
+          "high": {
+            "count": 28,
+            "pct": 31.1111
+          },
+          "moderate": {
+            "count": 34,
+            "pct": 37.7778
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 34,
+            "pct": 37.7778
+          },
+          "true": {
+            "count": 56,
+            "pct": 62.2222
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 27,
+            "pct": 30.0
+          },
+          "true": {
+            "count": 63,
+            "pct": 70.0
+          }
+        }
+      },
+      "max_marginal_deviation_from_parent_percentage_points": 1.3675,
+      "path": "/Users/lakshay/Desktop/ml-engineer-take-home-wg-recommendation/artifacts/splits/sft_validation.jsonl",
+      "records": 90,
+      "sha256": "be7b7c2c847da21e6fbf05145b39f16d1a18a2baa0761e427ccc88e49dfdb76b",
+      "teacher_annotation_included": true
+    }
+  },
+  "stage_1_pools": {
+    "grpo_pool": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 304,
+            "pct": 33.7778
+          },
+          "modern": {
+            "count": 301,
+            "pct": 33.4444
+          },
+          "old": {
+            "count": 295,
+            "pct": 32.7778
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 151,
+            "pct": 16.7778
+          },
+          "semi-detached": {
+            "count": 173,
+            "pct": 19.2222
+          },
+          "single-family": {
+            "count": 211,
+            "pct": 23.4444
+          },
+          "terraced": {
+            "count": 188,
+            "pct": 20.8889
+          },
+          "two-family": {
+            "count": 177,
+            "pct": 19.6667
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 234,
+            "pct": 26.0
+          },
+          "bak2": {
+            "count": 234,
+            "pct": 26.0
+          },
+          "fhg1": {
+            "count": 219,
+            "pct": 24.3333
+          },
+          "fhg2": {
+            "count": 213,
+            "pct": 23.6667
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 277,
+            "pct": 30.7778
+          },
+          "high": {
+            "count": 274,
+            "pct": 30.4444
+          },
+          "moderate": {
+            "count": 349,
+            "pct": 38.7778
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 349,
+            "pct": 38.7778
+          },
+          "true": {
+            "count": 551,
+            "pct": 61.2222
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 264,
+            "pct": 29.3333
+          },
+          "true": {
+            "count": 636,
+            "pct": 70.6667
+          }
+        }
+      },
+      "max_marginal_deviation_from_source_percentage_points": 0.2229,
+      "records": 900
+    },
+    "reward_calibration": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 67,
+            "pct": 33.5
+          },
+          "modern": {
+            "count": 67,
+            "pct": 33.5
+          },
+          "old": {
+            "count": 66,
+            "pct": 33.0
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 34,
+            "pct": 17.0
+          },
+          "semi-detached": {
+            "count": 38,
+            "pct": 19.0
+          },
+          "single-family": {
+            "count": 45,
+            "pct": 22.5
+          },
+          "terraced": {
+            "count": 43,
+            "pct": 21.5
+          },
+          "two-family": {
+            "count": 40,
+            "pct": 20.0
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 52,
+            "pct": 26.0
+          },
+          "bak2": {
+            "count": 52,
+            "pct": 26.0
+          },
+          "fhg1": {
+            "count": 49,
+            "pct": 24.5
+          },
+          "fhg2": {
+            "count": 47,
+            "pct": 23.5
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 62,
+            "pct": 31.0
+          },
+          "high": {
+            "count": 61,
+            "pct": 30.5
+          },
+          "moderate": {
+            "count": 77,
+            "pct": 38.5
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 77,
+            "pct": 38.5
+          },
+          "true": {
+            "count": 123,
+            "pct": 61.5
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 58,
+            "pct": 29.0
+          },
+          "true": {
+            "count": 142,
+            "pct": 71.0
+          }
+        }
+      },
+      "max_marginal_deviation_from_source_percentage_points": 0.7215,
+      "records": 200
+    },
+    "sft_pool": {
+      "distribution": {
+        "age_stratum": {
+          "middle": {
+            "count": 131,
+            "pct": 33.5897
+          },
+          "modern": {
+            "count": 129,
+            "pct": 33.0769
+          },
+          "old": {
+            "count": 130,
+            "pct": 33.3333
+          }
+        },
+        "building_type": {
+          "multi-family": {
+            "count": 66,
+            "pct": 16.9231
+          },
+          "semi-detached": {
+            "count": 75,
+            "pct": 19.2308
+          },
+          "single-family": {
+            "count": 90,
+            "pct": 23.0769
+          },
+          "terraced": {
+            "count": 82,
+            "pct": 21.0256
+          },
+          "two-family": {
+            "count": 77,
+            "pct": 19.7436
+          }
+        },
+        "construction_class": {
+          "bak1": {
+            "count": 103,
+            "pct": 26.4103
+          },
+          "bak2": {
+            "count": 102,
+            "pct": 26.1538
+          },
+          "fhg1": {
+            "count": 94,
+            "pct": 24.1026
+          },
+          "fhg2": {
+            "count": 91,
+            "pct": 23.3333
+          }
+        },
+        "hazard_tier": {
+          "elevated": {
+            "count": 119,
+            "pct": 30.5128
+          },
+          "high": {
+            "count": 119,
+            "pct": 30.5128
+          },
+          "moderate": {
+            "count": 152,
+            "pct": 38.9744
+          }
+        },
+        "natural_hazard_requested": {
+          "false": {
+            "count": 152,
+            "pct": 38.9744
+          },
+          "true": {
+            "count": 238,
+            "pct": 61.0256
+          }
+        },
+        "owner_occupied": {
+          "false": {
+            "count": 114,
+            "pct": 29.2308
+          },
+          "true": {
+            "count": 276,
+            "pct": 70.7692
+          }
+        }
+      },
+      "max_marginal_deviation_from_source_percentage_points": 0.3803,
+      "records": 390
+    }
+  },
+  "strategy": "deterministic two-stage iterative stratification",
+  "stratification_fields": [
+    "hazard_tier",
+    "age_stratum",
+    "building_type",
+    "construction_class",
+    "natural_hazard_requested",
+    "owner_occupied"
+  ]
+}
