@@ -17,9 +17,10 @@ htmlcov/
 **/.DS_Store
 tmp/
 *.log
+output/pdf2
 
 # Internal working notes used to assemble the final report
-gpt.md
+# gpt.md
 CLAUDE.md
 
 # Generated datasets and API intermediates. Keep compact JSON/Markdown

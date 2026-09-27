@@ -11,12 +11,12 @@ Target: move untuned Qwen (top-1 agreement 0.42) toward frontier (~0.80) at ~€
 
 ## Status
 <!-- Update this line at the start of each session -->
-Current stage: trained-model handoff — the completed RunPod SFT and 10-step GRPO
-runs have been imported with checkpoints, configs, logs, and frozen evaluations.
-SFT is the selected model (golden top-1 0.84); GRPO matched top-1 and slightly
-reduced top-3 recall. Next: verify the portable reproduction flow and assemble
-the final report/submission package. Do not run another golden evaluation for
-checkpoint selection.
+Current stage: final reporting — the completed RunPod SFT and 10-step GRPO runs
+have been imported and the portable reproduction flow has been verified. SFT is
+the selected model (golden top-1 0.84); GRPO matched top-1 and slightly reduced
+top-3 recall. The active work is the four-page submission brief and the detailed
+technical experiment report. Do not run another golden evaluation for checkpoint
+selection.
 
 ## Hard rules (never break these)
 1. `data/golden_wg_recommendations.jsonl` is HELD OUT.
