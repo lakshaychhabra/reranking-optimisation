@@ -208,7 +208,7 @@ def add_stage_table(doc: Document) -> None:
         [
             ["Data", "Generated risks + 2,000 engine requests", "Create task-specific panels", "1,490 usable panels / 9,632 tariff offers"],
             ["Teacher", "GPT-6 Sol silver labels", "Scale ranked supervision", "1,490 Top-3 labels"],
-            ["Reward", "20k deterministic search", "Align proxy to teacher", "49% → 94% calibration Top-1"],
+            ["Reward", "20k deterministic search", "Align proxy to teacher", "94% vs GPT-6 Sol (nested CV); 84% vs Fable golden"],
             ["SFT", "2B BF16 LoRA", "Test smaller-model hypothesis", "22% → 84% golden Top-1"],
             ["GRPO", "10-step continuation", "Test reward optimization", "84% Top-1; no broad gain"],
             ["Serving", "RTX 4090 vLLM benchmark", "Measure deployability", "63.66 rec/s at c64"],
@@ -245,12 +245,12 @@ def build_brief(path: Path) -> None:
     add_table(
         doc,
         ["Task", "What we did", "Why this way", "What we got"],
-        [["Build supervision", "2,000 quote-engine requests; GPT-6 Sol labelled the 1,490 usable panels", "Real quote panels preserve product trade-offs; silver labels scale cheaply", "9,632 tariff offers returned; five insurers; nine tariffs; disjoint splits; zero golden-risk overlap"]],
+        [["Build supervision", "2,000 quote-engine requests; GPT-6 Sol labelled the 1,490 usable panels", "Real quote panels preserve product trade-offs; silver labels scale cheaply", "9,632 tariff offers retained in usable panels; five insurers; nine tariffs; disjoint splits; zero exact golden-risk duplicates"]],
         widths=[1.05, 2.0, 2.0, 1.45], compact=True,
     )
-    add_figure(doc, "03-reward-calibration.png", "Reward search on the 200-scenario calibration split", 6.55)
+    add_figure(doc, "03-reward-calibration.png", "Symbolic scorer agreement with GPT-6 Sol — nested 5-fold validation on 200 calibration scenarios; not Fable/golden", 6.55)
     add_heading(doc, "What the reward audit changed", level=2)
-    add_body(doc, "Within panels, coverage count and deductible did not vary; coverage score and annual price carried the consistent ranking signal. A deterministic 20,000-candidate search selected a quality–price curve without LLM calls or golden labels:", style="Small Body")
+    add_body(doc, "Within panels, coverage count and deductible did not vary; coverage score and annual price carried the consistent ranking signal. A deterministic 20,000-candidate search selected a quality–price curve without LLM calls or golden labels. In nested five-fold validation, the symbolic scorer matched GPT-6 Sol on 188/200 calibration Top-1 choices (94%). After the weights were frozen, the same scorer matched Fable on 42/50 Top-1 choices (84%) on the separate golden set. Neither number is model accuracy.", style="Small Body")
     add_callout(doc, "Frozen symbolic score", "reward = (0.2863 + 0.4273 × normalized coverage score) / (1 + 1.7936 × normalized price)", PALE_GRAY)
     add_table(
         doc,
