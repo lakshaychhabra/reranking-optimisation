@@ -192,3 +192,44 @@ Format per entry: options considered / choice / why / what evidence would change
 - **What evidence would change it:** if a real WG underwriting reference
   showed German rebuild costs routinely falling outside €800–€5,000/sqm for
   in-scope building types, the bounds should be widened to match.
+
+## 2026-09-26 — Qwen3.5-2B serving cost shown as a range, not a measured price
+
+- **Options considered:** (a) omit the 2B models from the price–quality figure;
+  (b) assign them the 9B managed price; (c) scale the 9B estimate directly by
+  parameter count and report a single number; (d) show a sensitivity range
+  from parameter-linear scaling to 50% of the 9B price, with the geometric
+  midpoint used only to place the marker.
+- **Choice:** (d). The resulting estimate is €0.046–€0.093 per 1,000
+  recommendations, with a €0.066 display midpoint. It is labelled as estimated
+  everywhere and stored in `artifacts/figures/resolved_config.json`.
+- **Why:** the repository records local throughput but no A6000 hourly price,
+  so an infrastructure-derived cost would create false precision. Parameter
+  count gives a useful lower scenario; the wider upper scenario acknowledges
+  serving overhead and non-linear provider pricing. A range makes the central
+  cost-quality claim visible without presenting a guess as a bill or quote.
+- **What evidence would change it:** a controlled serving benchmark with an
+  actual hourly GPU or endpoint price, measured utilization/concurrency, and
+  the same prompt/completion lengths would replace the estimate entirely.
+
+## 2026-09-26 — Replace the parameter-scaled 2B estimate with measured vLLM economics
+
+- **Options considered:** (a) retain the €0.046–€0.093 parameter-scaled range;
+  (b) report only the best saturated benchmark result; (c) report a measured
+  utilization curve and choose a clearly labelled planning point.
+- **Choice:** (c), which supersedes the estimate above. A RunPod RTX 4090 at
+  $0.74/hour served the selected Qwen3.5-2B SFT adapter with vLLM. The cost
+  figure now uses a linear axis and shows the measured range from €0.002832/1k
+  at sustained concurrency 64 to €0.053899/1k one request at a time. Where a
+  scalar `price_assumption_eur_per_mtok` is required, use €0.010640/Mtok at a
+  conservative 25% fleet-utilization planning assumption (€0.011327/1k).
+- **Why:** self-hosted cost is determined by GPU-hour price, achieved throughput,
+  workload token length, batching, and idle capacity—not parameter count alone.
+  The sustained run completed 1,200 requests at concurrency 64 at 63.66 rec/s,
+  p50 1.003 s, p95 1.105 s, and 90.7% mean GPU utilization, with no failures or
+  invalid top-3 JSON. Raw request records and GPU telemetry are retained under
+  `artifacts/serving_benchmark/`.
+- **What evidence would change it:** production arrival-rate traces, an autoscaling
+  policy, redundancy requirements, or a benchmark on the actual deployment GPU
+  would change the planning utilization and possibly the instance choice. The
+  raw saturated result should remain the hardware-specific lower bound.
